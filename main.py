@@ -17,7 +17,7 @@ if option == "Generate Password":
             
         return "".join(random.choice(char) for _ in range(length))
 
-    st.title("Password Generator")
+    st.title("🔒Password Generator")
 
     length = st.slider("Select Password Length",min_value=6, max_value=32, value=12)
 
@@ -101,7 +101,7 @@ if "history" not in st.session_state:
     st.session_state.history = []
 
 if option == "Check Password":
-    st.title("Password Strength Meter")
+    st.title("🔏🛡️Password Strength Meter")
     password = st.text_input("write Password", type="password")
     score, remarks, data = check_password_strength(password)
     df = pd.DataFrame({"Checks" : data})
@@ -119,6 +119,7 @@ if option == "Check Password":
 
 # History
 if option == "History":
+    st.title("🛅Most Recent")
     history_df = pd.DataFrame({"Recent": st.session_state.history})
     st.write(history_df)
            
